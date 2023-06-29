@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+    
+</head>
+<body bgcolor="black" text="white">
+
+    <a id="x"></a>
+
+    <h1 class='readarea'>header</h1>
+    <p class='readarea'>body1</p>
+    <p id='adam'>body2</p>
+    <button id="btn">click</button>
+
+    <!-- script의 특성 = 순차적 진행= -->
+    <script>
+        document.getElementById('btn').addEventListener(
+            'click',function(e){
+                document.getElementById('adam').innerHTML='click'
+            }
+        )
+    </script>
+
+    <!-- 상대경로 활용 -->
+    <p><a href="./t.html#x" target="_blank">image</a></p>
+    <!-- 절대경로 활용-->
+    <a href="http://ggangpae1.tistory.com/" target="_blank">자료</a>
+
+    <h2>list</h2>
+    <ul>
+        <li>아메리카노</li>
+        <li>카푸치노</li>
+    </ul>
+
+    <h2>image</h2>
+    <!-- 절대 경로 활용 이미지 출력 -->
+    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F6CEcF%2FbtqxVzYzsYJ%2FhW9z8hX5DgILkKPk8AYr70%2Fimg.png" 
+    width="100" height="100"/>
+    <img src="./image/sky.jpg" width="100" height="100" />
+
+
+    <!-- styler(CSS)의 특성 = 코드 전부 읽고 마지막에  = 위치 변경 가능 -->
+    <style>
+        .readarea{
+            color:red;
+        }
+    </style>
+</body>
+</html>

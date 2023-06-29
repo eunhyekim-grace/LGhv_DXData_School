@@ -1,0 +1,12 @@
+/* 0629 - style sheet, css.html file */
+p{
+    color:beige;
+}
+
+input:focus{
+    background-color: aquamarine;
+    outline-color: white;
+}
+input:checked{
+    margin-left: 25px;
+}
