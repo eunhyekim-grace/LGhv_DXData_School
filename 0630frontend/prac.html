@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        p{
+            color:beige;
+        }
+        div{
+            background-image: url(https://cdn.crowdpic.net/detail-thumb/thumb_d_312A10C16E50564D058E96ACED28C033.jpg);
+        }
+    </style>
+
+    <!-- 외부에 있는 js 파일 가져와서 사용-->
+    <script src="./first.js"></script>
+</head>
+<body>
+    <p>CSS practice</p>
+    <div>용도와 작성하는 방법만 알아보고자 합니다.</div>
+    
+    <button onclick="alert('click button')">button</button>
+    <button id="btn">button</button>
+    <!-- HTML file 안에 script 코드 작성-->
+    <script>
+        document.getElementById("btn").addEventListener("click",
+        function(){
+            alert("2nd button click")
+        })
+    </script>
+</body>
+</html>

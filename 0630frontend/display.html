@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console-msg</title>
+</head>
+<body>
+    <script>
+        document.write("화면에 출력")
+        alert("대화 상자에 출력")
+        console.log("console에 출력")
+
+        document.write(33 + "<br />")
+
+        //let은 변경 가능한 data
+        let name = "grace"
+        let age = 22
+        //const는 변경 불가능한 data
+        const HOMETOWN = "songtan"
+
+        console.log(name) //console에 name에 저장된 데이터를 출력
+        console.log(typeof age) //age의 데이터 타입 출력
+        //console.log(project) //아직 만들지 않아서 undefined
+        let school = null
+        console.log(school) //아직 가리키는 data가 없음
+
+        //array - company name
+        let companys = ["LG", "Samsung", "Naver"]
+        //2번째 data 수정
+        companys[1] = "삼성"
+        //array data 확인
+        console.log(companys)
+        //data 개수 확인
+        console.log(companys.length)
+
+        console.log("12"+"34")
+        console.log(Number("12")+ Number("34")) //data형 변환
+
+        let index = 0
+        let colors = ['빨강', '파랑', '초록', '노랑']
+        setInterval(function(){
+            index += 1
+            document.write(colors[index% colors.length] + '<br />')
+        }, 1000) //1000 = 1sec
+
+    </script>
+</body>
+</html>
