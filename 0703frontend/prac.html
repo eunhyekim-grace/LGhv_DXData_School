@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+
+    <script>
+        //if
+        /*
+        let score = 90
+        //score가 60 이상이면 합격 -> 콘솔 출력
+        //{ }는 하나의 블럭
+        if(score >= 60){
+            console.log("합격")
+            //let name = "adam" //local -> 블럭 외부 사용X
+        }
+        //console.log(name) //undef
+        */
+        /*
+        let score = 50
+        let msg
+        //score가 60 이상 합격, 아니면 불합격
+        if(score >= 60){
+            msg = "합격"
+        }else{
+            msg = "불합격"
+        }
+        console.log(msg)
+        */
+
+        /*
+        //코테 -> 범위 확인 정확하게 
+        let score = 79
+        let msg
+        //80~100 우수
+        //60 ~79 보통
+        //0-59 저조
+        //그 이외: 잘못된 점수
+        if(score >= 80 && score <=100){
+            msg = "우수"
+        }else if(score >= 60 && score < 80){
+            msg = "보통"
+        }else if(score >=0 && score < 60){
+            msg = "저조"
+        }else{
+            msg = "잘못된 점수"
+        }
+        console.log(msg)
+        */
+
+        /*
+        //year 윤년 = "윤년"
+        //else = "{년도}는 윤년이 아님"
+        //윤년 조건-> 4의 배수O, 100의 배수 X
+        //400의 배수
+        let year = 2023
+        let msg
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+            msg = "윤년"
+        }else{
+            msg = year+"윤년X"
+        }
+        console.log(msg)
+        */
+
+        //switch
+        /*
+        let menu = 1
+        switch(menu){
+            case 0:
+                console.log("한식")
+                break // break 없으면 만날 때 까지 진행
+            case 1:
+                console.log("중식")
+                break
+            case 2:
+                console.log("일식")
+                break
+            default:
+                console.log("분식")
+        }
+        */
+
+        /*
+        //switch를 if처럼 사용 - 권장 X
+        let score = 88
+        switch(true){
+            case score >= 80:
+                console.log("우수")
+                break
+            case score >=60:
+                console.log("보통")
+                break
+            default:
+                console.log("저조")
+        }
+        */
+
+        //반복문 
+        /*
+        let count = 0
+        while(count <5){
+            console.log("Hello JavaScript")
+            count++
+        }
+        */
+       /*
+       let number = 0
+       while(number <5){
+        console.log(number)
+        number++
+       }
+       //2
+       while(number <5){
+        console.log(4-number)
+        number++
+       }
+       number = 4
+       while(number >=0){
+        console.log(number)
+        number--
+       }
+       //3
+       number = 1
+       while(number <=9){
+        console.log(number)
+        number +=2
+       }
+        number = 0
+       while(number <5){
+        console.log(2*number +1)
+        number++
+       }
+        */
+
+       //for
+       /*
+       //1,3번째 식의 자리에는 여러 개의 문장 사용이 가능하며 , 로 구분
+       for(let idx = 0, i = 0;idx <5;idx++, i+=2){
+            console.log(idx)
+       }
+       */
+       /*
+       //while 처럼 사용
+       for(;;){
+        console.log("!")
+       }
+       */
+      /*
+      let ar = ["adam","soccer","tail"]
+      for(idx in ar){
+        console.log(idx) //0,1,2
+        console.log(ar[idx]) // adam, soccer, tail
+      }
+      */
+     /*
+     for(let i=0, i<5,i++){
+        document.write("hello")
+     }
+     */
+
+     //함수 작성
+     /*
+     function f1(){
+        document.write("hello")
+     }
+
+     let f2 = function(){
+        document.write("hi")
+     }
+
+     //함수 호출
+     f1() //별도의 메모리 공간을 할당받아서 f1의 내용을 수행
+     f2() //f2라는 함수를 호출 (call)
+     */
+
+     //매개변수
+
+     /*
+     //매개변수가 없는 함수
+     let noargfunc = function(){
+        for(let i = 0;i<3;i++){
+            document.write(i + "<br />")
+        }
+     }
+     //매개 변수 있는 함수
+     //return 하는 데이터가 없는 경우 함수를 호출하고 더 이상 작업을 이어서 수행 할 수 X
+     let argfunc = function(cnt){
+        for(let i = 0;i<cnt;i++){
+            document.write(i + "<br />")
+            //return이 생략된 경우 맨 마지막에 return이 있는 것으로 간주
+        }
+     }
+     argfunc(5)
+     argfunc() //작업 수행 X - 매개변수를 주지 않으면 undef
+
+     let integerAddwithInteger = function(a,b){
+        document.write(a+b)
+     }
+     integerAddwithInteger(100,200)
+
+     //매개변수는 뒤에서 부터 생략이 가능함
+     //생략하면 undef가 대입 됨
+     integerAddwithInteger(100) //int+undef = NaN return 
+     */
+
+     /*
+     let intAddwithInt = function(a,b){
+        return a+b
+     }
+     //함수를 호출하고 결과를 바로 출력
+     document.write("<br /> "+intAddwithInt(200,200))
+     //함수를 호출하고 결과를 저장한 후 출력
+     let result = intAddwithInt(200,200)
+     document.write("<br />" + result)
+    */
+
+    /*
+    function zergattack(){
+        document.write("zerg attack" + "<br />")
+    }
+    function protossattck(){
+        document.write("protoss attack" + "<br />")
+    }
+    //zergattack()
+    //protossattack()
+
+    let starcraft
+    //함수도 하나의 data이므로 변수에 함수를 대입하는 것O
+    starcraft = zergattack
+    //function의 내용을 다른 변수에 담아서 호출하는 것: delegate(위임)
+    starcraft() //zerg attack return 
+
+    starcraft = protossattck
+    //동일한 코드가 대입된 내용에 따라 다른 함수를 호출: ploymorphism
+    //동일한 메시지에 대하여 다르게 반응하는 성질
+    starcraft() // protoss attack return 
+    */
+
+    //closure
+    /*
+    function outer(){
+        let data = 0 //fct 안에서 만든 변수라서 함수 안에서만 사용 O
+        //fct가 fct를 return
+        //fct를 return해서 내부의 데이터를 외부에서 변경하는 것: closure
+        return function(){
+            data += 1
+            console.log(data)
+        }
+    }
+    //function외부에서는 fct 내부의 데이터를 
+    //console.log(data) // undef
+
+    //outer fct 호출 -> 결과 inner 저장
+    //outer 함수가 리턴하는 함수를 inner에 저장
+    let inner = outer()
+    inner()
+    inner()
+    */
+
+    //arrow function
+    /*
+    //익명 함수, anonymous function
+    //익명 이라는 단어가 나오면 필요할 때 만들어서 사용 -> memory 사용을 효율적으로할 수 있음
+    const arrow = () =>{
+        alert("noname arrow function")
+    }
+    */
+
+    //maker function
+    
+    //confirm- 확인은 true, 취소는 false
+    let r = confirm("Had lunch?")
+    //조건에 사용할 때 == true는 생략 가능
+    if (r){ //fasle를 식 없이 사용하고 싶은 경우 !r 로 표현 가능
+        document.write("what did you eat?")
+    }else{
+        document.write("please have some")
+    }
+    
+
+    //encoding
+    let redvelvet = "name=아이린"
+    let encoding = encodeURI(redvelvet)
+    alert(encoding)
+    alert(decodeURI(encoding))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -40,9 +40,11 @@
         let index = 0
         let colors = ['빨강', '파랑', '초록', '노랑']
         setInterval(function(){
-            index += 1
+            index += 1 //index++
             document.write(colors[index% colors.length] + '<br />')
         }, 1000) //1000 = 1sec
+
+        console.log((1.0 - 0.8) == 0.2) //머신 애슬론 문제로 인해 false 리턴
 
     </script>
 </body>
