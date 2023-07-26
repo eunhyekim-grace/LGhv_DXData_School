@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL-Django</title>
+</head>
+<body>
+    {% for temp in data %}
+        <div> {{temp.itemid}} -<a href="detail/{{temp.itemid}}"> {{temp.itemname}} </a>- {{temp.price}} </div>
+    {% endfor %}
+</body>
+</html>
