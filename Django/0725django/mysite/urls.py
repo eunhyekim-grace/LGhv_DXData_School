@@ -19,10 +19,9 @@ from django.urls import path
 from myapp import views
 
 urlpatterns = [
-    #admin 요청이 오면 admin.site.urls 함수가 처리
+    # admin 요청이 오면 admin.site.urls 함수가 처리
     path("admin/", admin.site.urls),
     #'' 요청이 왔을 때 views 모듈의 index 함수가 처리
     path("", views.index),
-    
-    path("hello/", views.hello) #/는 생략해도 괜찮음
+    path("hello/", views.hello),  # /는 생략해도 괜찮음
 ]

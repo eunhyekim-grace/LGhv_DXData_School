@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <div id = 'display'></div>
+    <button id = 'allbtn'>전체 데이터 가져오기</button>
+    <br />
+
+    bid <input type ='text', id = 'bid' />
+    <button id = 'getbooknum'>데이터 1개 가져오기</button>
+</body>
+<script>
+    //해당하는 하나의 데이터 출력
+    document.getElementById('getbooknum').addEventListener('click',
+        (e) =>{
+            //id가 bid인 입력의 값 가져오기
+            let bid = document.getElementById('bid').value;
+            //alert(bid); 
+            
+            let request = new XMLHttpRequest();
+            request.open('GET','../example/fbv/book/'+bid, true)
+            request.send()
+            request.addEventListener('load',(e)=>{
+                //없는 번호인 경우는 detail에 NotFound 값이 넘어옴
+                //alert(request.responseText)
+
+                //parsing
+                let data = JSON.parse(request.responseText);
+                let txt = "";
+                //alert(data.detail); //alert(data);
+                // data 유무 확인
+                if('detail' in data){
+                    //data가 없을 때 처리
+                    txt = "<h3>해당하는 bid가 없습니다.</h3>";
+                }
+                else{
+                    //data가 있을 때 처리
+                    txt += '<h3>' + data.bid + '</h3>';
+                    txt += '<p>' + data.title + '</p>';
+                    txt += '<p>' + data.pages + '</p>';
+                }
+                document.getElementById('display').innerHTML = txt;
+            })
+        });
+
+
+    //전체 데이터 출력
+    document.getElementById('allbtn').addEventListener('click',
+        (e) =>{
+        let request = new XMLHttpRequest();
+        // 출력하는 함수에 객체를 대입하면 toString method 호출함
+            //python은 __str__ method 호출
+            //위 method를 재정의 - 그 내용 출력, 재정의 X - 기본값 출력
+        //alert(request)
+
+        //요청 생성
+        //현재- https://localhost:8000/ajax/
+        //목적지 - https://localhost:8000/example/fbv/books/
+        request.open('GET', '../example/fbv/books/', true);
+        //요청 전송
+        request.send('')
+        //응답이 오면 호출
+        request.addEventListener('load',(e)=> {
+            //문자열
+            //alert(request.responseText)
+
+            //문자열 -> Javascript data로 변환
+            //data - 객체들의 배열
+            let data = JSON.parse(request.responseText);
+            let txt = '';
+
+            //고민해 볼 점
+            //if(data.length > 0) -> 데이터가 없을 경우 빈 화면 출력 
+            //빈 화면은 X -> data가 없으면 없다고 표시해 주는 것이 훨씬 나음
+
+            for(let item of data){ //Javascript:for - in data -> index return
+                //alert(item.title)
+                txt += '<h3>' + item.title + '</h3>';
+                txt += '<p>' + item.price + '</p>';
+                txt += '<p>' + item.published_date + '</p>';
+            }
+            document.getElementById('display').innerHTML = txt;
+        });
+
+        });
+</script>
+</html>
