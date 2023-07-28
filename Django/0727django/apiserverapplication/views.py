@@ -39,6 +39,7 @@ def booksAPI(request):
         return Response(serializer.data,status = status.HTTP_200_OK)
       
     elif request.method == 'POST':
+        print(request.data)
         #client가 전송한 데이터를 모델이 사용할 수 있는 data로 변환
         serializer = BookSerializer(data = request.data)
 
