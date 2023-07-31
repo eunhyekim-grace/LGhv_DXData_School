@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todoapp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    #todo 요청은 views 파일의 TodoView class가 처리하도록 설정
+    path('todo/',views.TodoView.as_view())
 ]
