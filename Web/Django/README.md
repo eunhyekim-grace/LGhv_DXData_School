@@ -7,25 +7,25 @@ Python의 Web Application Framework
 프로그램을 독립적으로 실행할 수 있는 환경
 ```
 > Windows 가상환경 설정
-python3 -m venv {가상 환경 이름}
+python3 -m venv {가상 환경 이름} <br\>
 > 활성화
-{가상 환경 이름}\Scripts\activate.bat
+{가상 환경 이름}\Scripts\activate.bat <br\>
 > Mac 가상환경 활성화
 source {가상 환경 이름}/bin/activate
 ```
 
 ## Django 기본 설정
 ```
-> 가상환경에 Django 설치
-pip install django
+> 가상환경에 Django 설치 
+pip install django <br\>
 > Django 프로젝트 설정
-django-admin startproject pj이름 dir경로
+django-admin startproject pj이름 dir경로 <br\>
 > Django application 생성 - 실제 실행되는 프로그램 생성
-python manage.py startapp {앱 이름}
+python manage.py startapp {앱 이름} <br\>
 > Data migration하기
-python manage.py migrate
+python manage.py migrate <br\>
 > Django application 실행
-python manage.py runserver
+python manage.py runserver <br\>
 > localhost:8000 에서 로켓 아이콘과 함께 successful 문구가 뜨면 기본 설정 완료
 ```
 
