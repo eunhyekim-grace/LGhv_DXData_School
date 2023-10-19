@@ -7,7 +7,7 @@ Python의 Web Application Framework
 프로그램을 독립적으로 실행할 수 있는 환경
 ```
 > Windows 가상환경 설정
-python3 -m venv {가상 환경 이름} <br\>
+python3 -m venv {가상 환경 이름} <br/>
 > 활성화
 {가상 환경 이름}\Scripts\activate.bat <br\>
 > Mac 가상환경 활성화
